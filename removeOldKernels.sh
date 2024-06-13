@@ -6,12 +6,14 @@ OS_RELEASE=`cat /etc/os-release | grep -i ^version= | sed 's/VERSION="//' | sed 
 OS_VERSION=`echo $OS_RELEASE | cut -f1 -d"." `
 NUM=0
 NUM_RM=0
+HELP=null
 
 Help(){
 echo "Syntax: removeOldKernels.sh [-h|n|v]
 h    Print this help
 n    Set number of old kernels to delete (1 or 2)
 v    Run in verbose mode"
+exit 1
 }
 
 Number(){
@@ -32,7 +34,7 @@ OPTSTRING=':n:hv'
 while getopts ${OPTSTRING} opt
   do
     case $opt in
-      h)  Help ;;
+      h)  HELP=1, Help ;;
       n)  NUM=${OPTARG} ;;
       v)  Verbose ;;
       \?) echo "Invalid option: -$OPTARG" >&2; exit 1 ;;

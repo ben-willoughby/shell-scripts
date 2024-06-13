@@ -27,6 +27,7 @@ v    Run in verbose mode
 
 Example: outputSarData.sh -u testUser -f /tmp/sar -s 01 -e 05
 This would run as testUser, output the file as /tmp/sar/sar_output_$HOSTNAME.txt and contain output from SAR between the 1st and 5th of the month"
+exit 1
 }
 
 # Setting what the options do
