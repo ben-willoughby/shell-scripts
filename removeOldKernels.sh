@@ -34,7 +34,7 @@ OPTSTRING=':n:hv'
 while getopts ${OPTSTRING} opt
   do
     case $opt in
-      h)  HELP=1, Help ;;
+      h)  Help ;;
       n)  NUM=${OPTARG} ;;
       v)  Verbose ;;
       \?) echo "Invalid option: -$OPTARG" >&2; exit 1 ;;
