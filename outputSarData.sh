@@ -38,7 +38,7 @@ while getopts ${OPTSTRING} opt
       u)  USER=${OPTARG} ;;
       s)  START=${OPTARG} ;;
       e)  END=${OPTARG} ;;
-      f)  FILE=${OPTARG};; #/sar_output_$HOSTNAME.txt ;;
+      f)  FILE=${OPTARG};;
       l)  LAST=${OPTARG} ;;
       v)  VERBOSE=1 ;;
       \?) echo "Invalid option: -$OPTARG" >&2; exit 1 ;;
