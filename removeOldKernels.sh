@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Script to check version of Linux and remove older versions of kernels
+# Script to check version of RHEL/OEL and remove older versions of kernels
 
 OS_RELEASE=`cat /etc/os-release | grep -i ^version= | sed 's/VERSION="//' | sed 's/^[[:space:]]*//' | cut -f1 -d" "`
 OS_VERSION=`echo $OS_RELEASE | cut -f1 -d"." `
