@@ -15,18 +15,18 @@ LASTDAY="null"
 Help()
 {
   SARLIST=1
-  echo "Syntax: outputSarData.sh [-h|u|s|e|f|l|v]"
-  echo "Options:"
-  echo "h    Print this help"
-  echo "u    Run as another user, file will be place in their home directory unless specified otherwise with "-f""
-  echo "s    Start date for lookup (must be two digits) e.g. 01"
-  echo "e    End date for lookup (must be two digits) e.g. 01"
-  echo "f    Set output directory, default is /home/$USER/"
-  echo "l    Run sar on previous x number of days"
-  echo "v    Run in verbose mode"
-  echo ""
-  echo "Example: outputSarData.sh -u testUser -f /tmp/sar -s 01 -e 05"
-  echo "This would run as testUser, output the file as /tmp/sar/sar_output_$HOSTNAME.txt and contain output from SAR between the 1st and 5th of the month"
+  echo "Syntax: outputSarData.sh [-h|u|s|e|f|l|v]
+Options:
+h    Print this help
+u    Run as another user, file will be place in their home directory unless specified otherwise with '-f'
+s    Start date for lookup (must be two digits) e.g. 01
+e    End date for lookup (must be two digits) e.g. 01
+f    Set output directory, default is /home/$USER/
+l    Run sar on previous x number of days
+v    Run in verbose mode
+
+Example: outputSarData.sh -u testUser -f /tmp/sar -s 01 -e 05
+This would run as testUser, output the file as /tmp/sar/sar_output_$HOSTNAME.txt and contain output from SAR between the 1st and 5th of the month"
 }
 
 # Setting what the options do
@@ -105,8 +105,8 @@ echo "SAR ran successfully. Output has been saved to $FILE"
 # Running verbose options
 if [ $VERBOSE -eq 1 ]
   then
-    echo "User is set to $USER"
-    echo "Output file will be saved to $FILE"
+    echo "User is set to $USER
+  Output file will be saved to $FILE"
     if ! [ ${#SARLIST[@]} -eq 0 ]
       then
         echo "System activity (SAR) files to be saved are:"
