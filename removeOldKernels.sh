@@ -9,10 +9,10 @@ NUM_RM=0
 HELP=null
 
 Help(){
-echo "Syntax: removeOldKernels.sh [-h|n|v]
-h    Print this help
-n    Set number of old kernels to delete (1 or 2)
-v    Run in verbose mode"
+echo "Usage: removeOldKernels.sh [-h|-n|-v]
+  -h    Print this help
+  -n    Set number of old kernels to delete (1 or 2)
+  -v    Run in verbose mode"
 exit 1
 }
 
@@ -62,7 +62,7 @@ if [ $NUM -eq 1 ] || [ $NUM -eq 2 ]
         yum remove $(yum repoquery --installonly --latest-limit=-$NUM_RM -q) #-y
       else
         package-cleanup --oldkernels --count=$NUM_RM
-        fi
+    fi
 else
     echo "Invalid number of kernels entered. Please enter either 1 or 2."
     exit 1
