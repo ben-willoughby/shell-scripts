@@ -16,7 +16,7 @@ VERBOSE=0
 
 # Functions
 Help(){
-  echo "Usage: removeOldKernels.sh [-h|-d|-n|-v]
+  echo "Usage: removeOldKernels.sh [-h|-a|-d|-o|-n|-f|-v]
     -h    Print this help
     -a    Append new line to existing file, default file is $FILEPATH unless specified
     -d    Set output directory, default is $DIR
