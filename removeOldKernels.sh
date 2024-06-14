@@ -6,7 +6,6 @@ OS_RELEASE=`cat /etc/os-release | grep -i ^version= | sed 's/VERSION="//' | sed 
 OS_VERSION=`echo $OS_RELEASE | cut -f1 -d"." `
 NUM=0
 NUM_RM=0
-HELP=null
 
 Help(){
 echo "Usage: removeOldKernels.sh [-h|-n|-v]
