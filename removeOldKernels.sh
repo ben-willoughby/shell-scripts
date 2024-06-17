@@ -22,9 +22,9 @@ Number(){
 }
 
 Verbose(){
-    echo "OS Version is $OS_RELEASE
-Number of old kernels to delete: $NUM
-Current kernel is "`uname -r`
+    echo "OS Version is $OS_RELEASE"
+# Number of old kernels to delete: $NUM
+echo "Current kernel is "`uname -r`
 echo "Currently installed kernels are:"
 yum list installed | grep kernel
 }
@@ -60,7 +60,7 @@ if [ $NUM -eq 1 ] || [ $NUM -eq 2 ]
       then
         yum remove $(yum repoquery --installonly --latest-limit=-$NUM_RM -q) #-y
       else
-        package-cleanup --oldkernels --count=$NUM_RM
+        package-cleanup --oldkernels --count=$NUM
     fi
 else
     echo "Invalid number of kernels entered. Please enter either 1 or 2."
